@@ -125,7 +125,7 @@ int main(int, char const **)
 	int err;
 	uint32_t count = 0;
 
-	sensor_lib = dlopen("./libvd628x_flicker.so", RTLD_LAZY);
+	sensor_lib = dlopen("libvd628x_flicker.so", RTLD_LAZY);
 	if (NULL == sensor_lib)
 	{
 		LOG("Failing to open sensor library! Error: %s\n", dlerror());
