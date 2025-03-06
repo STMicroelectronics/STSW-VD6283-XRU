@@ -134,13 +134,13 @@ int main(int, char const **)
 	dlerror();
 
 	// get the interface object
-	typedef void (*GetVD6281Interface_t)(SpectralSensorInterface** ppInterfaceObject);
-	GetVD6281Interface_t GetVD6281Interface = (GetVD6281Interface_t)dlsym(sensor_lib, "GetSpectralSensorInterface");
-	if (GetVD6281Interface == NULL) {
-		LOG("GetVD6281Interface is NULL. Aborting.\n");
+	typedef void (*GetVD628xInterface_t)(SpectralSensorInterface** ppInterfaceObject);
+	GetVD628xInterface_t GetVD628xInterface = (GetVD628xInterface_t)dlsym(sensor_lib, "GetSpectralSensorInterface");
+	if (GetVD628xInterface == NULL) {
+		LOG("GetVD628xInterface is NULL. Aborting.\n");
 		return -1;
 	}
-	GetVD6281Interface(&pIO);
+	GetVD628xInterface(&pIO);
 
 	// Query Driver info
 	QueryInfo SensorInfo;
